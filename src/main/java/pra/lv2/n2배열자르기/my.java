@@ -17,6 +17,7 @@ public class my {
         //Integer::parseInt → 메서드 참조 (메서드를 참조하여 전달)
         //Integer.parseInt("123") → 메서드 호출 (메서드를 실행하여 결과 반환)
 
+
         int [] result= solution(arr[0],arr[1],arr[2]);
 
         for(int i=0;i<result.length;i++){
