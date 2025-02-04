@@ -1,4 +1,4 @@
-package 프로그래머스.lv1.실패율;
+package pra.lv1.실패율;
 
 import java.util.HashMap;
 import java.util.Map;

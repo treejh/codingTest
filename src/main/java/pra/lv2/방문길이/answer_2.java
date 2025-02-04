@@ -1,4 +1,4 @@
-package 프로그래머스.lv2.방문길이;
+package pra.lv2.방문길이;
 
 import java.util.HashMap;
 import java.util.Map;

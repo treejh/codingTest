@@ -1,9 +1,5 @@
-package 프로그래머스.lv0.배열뒤집기;
+package pra.lv0.배열뒤집기;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class answer_3 {
