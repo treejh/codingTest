@@ -28,11 +28,11 @@ public class answer_2 {
                 result[0]++;
             }
 
-            if(person1[i/person1.length]==answer[i]){
+            if(person1[i%person1.length]==answer[i]){
                 result[1]++;
             }
 
-            if(person2[i/person2.length]==answer[i]){
+            if(person2[i%person2.length]==answer[i]){
                 result[2]++;
             }
         }

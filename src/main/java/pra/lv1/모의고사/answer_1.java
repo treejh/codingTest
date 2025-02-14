@@ -29,12 +29,12 @@ public class answer_1 {
             }
         }
         for(int i=0;i<answer.length;i++){
-            if(person1[i/person1.length]==answer[i]){
+            if(person1[i%person1.length]==answer[i]){
                 result[1]++;
             }
         }
         for(int i=0;i<answer.length;i++){
-            if(person2[i/person2.length]==answer[i]){
+            if(person2[i%person2.length]==answer[i]){
                 result[2]++;
             }
         }
