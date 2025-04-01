@@ -3,7 +3,7 @@ package pra.lv1.신고결과받기;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class answer_1 {
+public class answer_2 {
     public static void main(String[] args) {
         // id_list 배열
 
@@ -27,59 +27,48 @@ public class answer_1 {
 
     }
     public static int[] solution(String[] id_list, String[] report, int k) {
-        HashSet<String> banUser = new HashSet<>();
-        //신고를 당한 사람, 신고한 사람
         HashMap<String,HashSet<String>> userReportCount = new HashMap<>();
         HashMap<String,HashSet<String>> banUserCount = new HashMap<>();
 
 
         //유저별 신고당한 횟수
-        //본인 0 본인이
-        //본인이 신고한 애 1본인이 신고한애
+        //본인
+        //본인이 신고한 애
         for(String content  : report){
             String[] reportContent = content.split(" ");
             //userReportCount.put(reportContent[1],userReportCount.getOrDefault(reportContent[1],0)+1);
             if(!userReportCount.containsKey(reportContent[1])){
-
-                userReportCount.computeIfAbsent(reportContent[1], s -> new HashSet<>()).add(reportContent[0]);
-
-            }
-            else{
-                userReportCount.computeIfAbsent(reportContent[1], s -> new HashSet<>()).add(reportContent[0]);
-            }
-
-
-
-
-        }
-
-
-        //정지된 아이디
-        for(String name : userReportCount.keySet()){
-            if(userReportCount.get(name).size()>=k){
-                banUser.add(name);
+                HashSet<String> user = new HashSet<>();
+                user.add(reportContent[0]);
+                userReportCount.put(reportContent[1],user);
+            }else{
+                HashSet<String> user = userReportCount.get(reportContent[1]);
+                user.add(reportContent[0]);
+                userReportCount.put(reportContent[1],user);
             }
         }
+
 
         //0은 본인
         //1은 본인이 신고한 애
         for(String content : report){
             String[] reportContent = content.split(" ");
             //banUser에 들어가 있으면,
-            if(banUser.contains(reportContent[1])) {
-                if (!banUserCount.containsKey(reportContent[0])) {
-                    banUserCount.computeIfAbsent(reportContent[0], s -> new HashSet<>()).add(reportContent[1]);
-                } else {
-                    banUserCount.computeIfAbsent(reportContent[0], s -> new HashSet<>()).add(reportContent[1]);
+
+            //바로 userReportCount.get size로 할 수 있지 않나 ?
+
+            if(userReportCount.get(reportContent[1]).size()>=k){
+                if(!banUserCount.containsKey(reportContent[0])){
+                HashSet<String> banData = new HashSet<>();
+                banData.add(reportContent[1]);
+                banUserCount.put(reportContent[0], banData);
+                }else{
+                    HashSet<String> banData = banUserCount.get(reportContent[0]);
+                    banData.add(reportContent[1]);
+                    banUserCount.put(reportContent[0], banData);
                 }
             }
         }
-        System.out.println(" --======== ");
-        for(String data : banUserCount.keySet()){
-            System.out.println(data + " : " +userReportCount.get(data));
-        }
-
-
 
         //결과
         int[] answer = new int [id_list.length];
@@ -91,6 +80,7 @@ public class answer_1 {
                 answer[i] = 0;
             }
         }
+
 
         return answer;
     }
