@@ -5,7 +5,7 @@ public class 배열두배만들기 {
 
     public static int[] solution(int [] data){
         return Arrays.stream(data).map(
-               i->  i*2
+                i->  i*2
         ).toArray();
     }
 
