@@ -6,17 +6,18 @@ public class solution {
         System.out.println(result[0]+ ": "+ result[1]);
     }
 
+    //첫번째 코드
     public static int[] solution(int money) {
-        int remainMoney = money;
 
         int result =0;
-        while(remainMoney >= 5500){
-            remainMoney -=5500;
+        while(money >= 5500){
+            money -=5500;
             result++;
         }
-        return new int[] {result,remainMoney};
+        return new int[] {result,money};
     }
 
+    //두번째 코드
     public static int[] solution2(int money) {
 
         return new int [] {money/5500, money%5500};
