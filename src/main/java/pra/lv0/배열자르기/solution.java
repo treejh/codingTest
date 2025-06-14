@@ -8,4 +8,5 @@ public class solution {
 
         return Arrays.copyOfRange(numbers,num1,num2+1);
     }
+
 }
