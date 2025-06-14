@@ -1,6 +1,7 @@
 package pra.lv0.외계행성의나이;
 
 public class solution {
+    //정답 코드 1
     public String solution(int age) {
 
         String [] ageData = new String[26];
@@ -21,6 +22,8 @@ public class solution {
         return result.toString();
     }
 
+
+    //정답 코드 2
     public String solutio2(int age) {
         String sAge = String.valueOf(age);
         //String sAge = Integer.toString(age);
@@ -40,6 +43,8 @@ public class solution {
         return result.toString();
     }
 
+
+    //정답 코드 3
     public String solution3(int age) {
         String sAge = Integer.toString(age);
 
