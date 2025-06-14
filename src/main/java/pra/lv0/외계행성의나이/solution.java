@@ -38,6 +38,21 @@ public class solution {
         }
 
         return result.toString();
+    }
+
+    public String solution3(int age) {
+        String sAge = Integer.toString(age);
+
+        StringBuilder result = new StringBuilder();
+
+        for(int i=0;i<sAge.length();i++){
+            //char data = (char) ((sAge.charAt(i) -'0')+97);
+            //char data =(char)(sAge.charAt(i) +49);
+            char data = (char)('a'+(sAge.charAt(i) -'0'));
+            result.append(data);
+        }
+
+        return result.toString();
 
 
     }
