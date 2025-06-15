@@ -19,7 +19,6 @@ public class solution {
             return (int) (price - ( discount * price));
         }else if(price >= 100000){
             double discount = discountCal(5);
-
             return (int) (price - ( discount * price));
         }else{
             return price;
