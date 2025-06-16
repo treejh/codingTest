@@ -1,5 +1,7 @@
 package pra.lv0.개미군단;
 
+import java.util.HashMap;
+
 public class solution {
 
     public int solution(int hp) {
@@ -21,8 +23,8 @@ public class solution {
     }
 
     public int solution2(int hp) {
+        HashMap<String,String> a = new HashMap<>();
         return hp / 5 + (hp%5) / 3 + hp%5%3;
-
     }
 
 
