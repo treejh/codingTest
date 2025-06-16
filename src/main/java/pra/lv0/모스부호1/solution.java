@@ -14,6 +14,7 @@ public class solution {
                 "---", ".--.", "--.-", ".-.", "...", "-", "..-",
                 "...-", ".--", "-..-", "-.--", "--.."
         };
+
         //morseData에 모스 부호 저장
         for(int i=0;i<morse.length;i++){
             morseData.put(morse[i],(char)(i+'a'));
