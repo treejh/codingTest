@@ -28,10 +28,11 @@ class Solution {
         }   
         
         for(Integer lostData : lostList){
+            //앞
              if(reverseList.contains(lostData-1)){
                 answer++;
                 reverseList.remove(lostData-1);
-            //앞 
+            //뒤
             }else if(reverseList.contains(lostData+1)){
                       answer++;
                 reverseList.remove(lostData+1);
