@@ -6,7 +6,7 @@ class Solution {
             data+=(long)(price * i);
         }
         
-        return data-money > 0 ? data-money : 0;
+        return Math.max(data-money,0);
 
     }
 }
