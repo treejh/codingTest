@@ -3,7 +3,6 @@ class Solution {
     public int solution(int[] d, int budget) {
         
         Arrays.sort(d);
-        int temp = 0;
         int remain =budget;
         int count =0;
         
@@ -12,10 +11,10 @@ class Solution {
                  break;
             }
             remain -= d[i];
-            count =i;
+            count++;
            
         }
         
-        return d[0] > budget ? 0 : count+1;
+        return count;
     }
 }
